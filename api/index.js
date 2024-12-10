@@ -1,12 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
+// const cors = require("cors");
 
 require("dotenv").config();
 const app = express();
 
 // Enable CORS for http://localhost:3000
-app.use(cors());
+// app.use(cors());
 
 
 // Middleware to parse JSON
@@ -40,7 +40,8 @@ app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
 app.use("/wallet", walletRoute);
 app.use("/update", updateRoute);
-
-
-// Export the app
+const PORT = 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });// Export the app
 module.exports = app;
