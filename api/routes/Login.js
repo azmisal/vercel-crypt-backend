@@ -3,7 +3,8 @@ const router = express.Router();
 const userCopy = require('../model/user');
 
 router.post('/', (req, res) => {
-    const {email,password} = req.body;
+    const email = req.body.email;
+    const password = req.body.password;
     userCopy.findOne({email,password})
     .then(user=>{
         if(user){
