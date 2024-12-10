@@ -1,8 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("dotenv").config();
+const cors = require("cors");
 
+require("dotenv").config();
 const app = express();
+
+// Enable CORS for http://localhost:3000
+app.use(cors({
+    origin:"http://localhost:3000",
+}));
+
+
 // Middleware to parse JSON
 app.use(express.json());
 
