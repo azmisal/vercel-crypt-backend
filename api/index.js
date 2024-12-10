@@ -28,7 +28,7 @@ const signupRoute = require("./routes/Signup");
 const loginRoute = require("./routes/Login")
 const walletRoute = require("./routes/Wallet")
 const updateRoute = require("./routes/Update")
-
+const itemsRoute = require("./routes/items")
 
 
 // Base route
@@ -40,6 +40,10 @@ app.use("/signup", signupRoute);
 app.use("/login", loginRoute);
 app.use("/wallet", walletRoute);
 app.use("/update", updateRoute);
+app.use("/items", itemsRoute);
+
+
+
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
