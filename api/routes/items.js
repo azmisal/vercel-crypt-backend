@@ -3,7 +3,7 @@ const router = express.Router();
 const userCopy = require('../model/user');
 
 // GET request to fetch all items
-router.get("/items", async (req, res) => {
+router.get("/", async (req, res) => {
     try {
         const users = await userCopy.find(); // Fetch all documents in the collection
         res.status(200).json(users); // Send the data as JSON
