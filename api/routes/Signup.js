@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const userCopy = require('../model/user');
 
+router.get('/',(req,res)=>res.send("hii");)
+
+
 router.post('/', (req, res) => {
     const userSigning = new userCopy({
         name: req.body.name,
